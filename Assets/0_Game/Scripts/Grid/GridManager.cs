@@ -22,7 +22,6 @@ public class GridManager : MonoBehaviour
         Tiles = _scriptableGrid.GenerateGrid();
         foreach (var tile in Tiles.Values) tile.CacheNeighbors();
 
-
         _playerNodeBase = Tiles.Where(t => t.Value.IsWalkable).OrderBy(t => Random.value).First().Value;
         Instantiate(GameObject.CreatePrimitive(PrimitiveType.Sphere), Vector3.up + _playerNodeBase.transform.position, Quaternion.identity);
 

@@ -17,7 +17,7 @@ public class ScriptableSquareGrid : ScriptableGrid
             for (int z = 0; z < _gridHeight; z++)
             {
                 var tile = Instantiate(nodeBasePrefab, grid.transform);
-                tile.Init(Random.Range(1, 20) > 3, new SquareCoords { Position = new Vector3(x, 0, z) });
+                tile.Init(Random.Range(0, 20) < 3, new SquareCoords { Position = new Vector3(x, 0, z) });
                 tiles.Add(new Vector3(x, 0, z), tile);
             }
         }

@@ -1,0 +1,34 @@
+{
+    "name": "InputProvider",
+    "maps": [
+        {
+            "name": "Mouse",
+            "id": "073ed284-af07-40d0-b129-61cf750d7d3e",
+            "actions": [
+                {
+                    "name": "MouseDelta",
+                    "type": "PassThrough",
+                    "id": "a28727ef-f7dd-4ce8-b016-1e5fd2534355",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c02bbc25-438c-4a18-ae69-d9076c517788",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseDelta",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

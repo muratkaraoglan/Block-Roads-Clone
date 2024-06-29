@@ -15,4 +15,4 @@ MonoBehaviour:
   nodeBasePrefab: {fileID: 5959846309402843475, guid: 92a67456cfd6d2d4086f617cf816906b,
     type: 3}
   _gridWidth: 10
-  _gridHeight: 25
+  _gridHeight: 10
