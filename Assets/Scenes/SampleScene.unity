@@ -2066,8 +2066,10 @@ GameObject:
   m_Component:
   - component: {fileID: 991101644}
   - component: {fileID: 991101645}
+  - component: {fileID: 991101646}
+  - component: {fileID: 991101647}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2101,7 +2103,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17db8d74501d90040b24b58dcc33e3e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameObjectEvent: {fileID: 11400000, guid: e3971a9af318f5d479e5a6b303396e9e, type: 2}
   _moveSpeed: 2
+--- !u!65 &991101646
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991101643}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &991101647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991101643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a273ac14ed73f5842917a06a74d58f47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameEvent: {fileID: 11400000, guid: e3971a9af318f5d479e5a6b303396e9e, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 991101645}
+        m_TargetAssemblyTypeName: PlacableMover, Assembly-CSharp
+        m_MethodName: OnTileSelected
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1031629092
 GameObject:
   m_ObjectHideFlags: 0
