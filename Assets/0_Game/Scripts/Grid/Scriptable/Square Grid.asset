@@ -16,3 +16,4 @@ MonoBehaviour:
     type: 3}
   _gridWidth: 10
   _gridHeight: 10
+  _walkable: 10.57
