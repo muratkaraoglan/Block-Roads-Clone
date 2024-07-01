@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameObjectGameEventLisneter : GameEventListenerBase<GameObject>
+public class PlacableTileGameObjectEventListener : GameEventListenerBase<GameObject>
 {
 
 }

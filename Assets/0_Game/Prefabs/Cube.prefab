@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6200754846825652476}
   - component: {fileID: 3819631359297078330}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 8237680791417456223}
   - component: {fileID: 1015591002028458988}
   - component: {fileID: 5959846309402843475}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 1f6b2fc493f9d914ca316d68d7547f04, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -204,4 +204,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _renderer: {fileID: 3819631359297078330}
-  <IsWalkable>k__BackingField: 0
+  _meshRenderer: {fileID: 8237680791417456223}
+  <IsEmpty>k__BackingField: 0

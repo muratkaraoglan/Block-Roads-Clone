@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 716744b998e1c894bba9ef59ed3cef93, type: 3}
-  m_Name: Game Object Event
+  m_Script: {fileID: 11500000, guid: ff3e3d55ece70bb4390603841bcef95a, type: 3}
+  m_Name: PlacableTileGameObjectEvent
   m_EditorClassIdentifier: 

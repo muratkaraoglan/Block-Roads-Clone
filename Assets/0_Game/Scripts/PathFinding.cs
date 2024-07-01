@@ -40,7 +40,7 @@ public static class Pathfinding
                 return path;
             }
 
-            foreach (var neighbor in current.Neighbors.Where(t => t.IsWalkable && !processed.Contains(t)))
+            foreach (var neighbor in current.Neighbors.Where(t => t.IsEmpty && !processed.Contains(t)))
             {
                 var inSearch = toSearch.Contains(neighbor);
 

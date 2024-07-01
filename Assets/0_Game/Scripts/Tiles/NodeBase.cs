@@ -5,42 +5,73 @@ using UnityEngine;
 
 public abstract class NodeBase : MonoBehaviour
 {
-
     [SerializeField] protected SpriteRenderer _renderer;
+    [SerializeField] private MeshRenderer _meshRenderer;
     public ICoord Coords;
-
     public float GetDistance(NodeBase otherNode) => Coords.GetDistance(otherNode.Coords);
 
-    [field: SerializeField] public bool IsWalkable { get; set; }
+    [field: SerializeField] public bool IsEmpty { get; set; }
 
-    public virtual void Init(bool isWalkable, ICoord coords)
+    public virtual void Init(bool isEmpty, ICoord coords)
     {
-        IsWalkable = isWalkable;
+        IsEmpty = isEmpty;
         Coords = coords;
         transform.position = Coords.Position;
-        _renderer.color = isWalkable ? Color.white : Color.black;
+        _renderer.color = isEmpty ? Color.white : Color.black;
     }
 
-    public static event Action<NodeBase> OnHoverTile;
-    private void OnEnable()
+    public void ChangeMaterial(MaterialState state)
     {
-        OnHoverTile += OnOnHoverTile;
-    }
-    private void OnDisable()
-    {
-        OnHoverTile -= OnOnHoverTile;
+        MaterialPropertyBlock materialPropertyBlock = new MaterialPropertyBlock();
+
+        _meshRenderer.GetPropertyBlock(materialPropertyBlock);
+        switch (state)
+        {
+
+            case MaterialState.Empty:
+                {
+                    materialPropertyBlock.SetColor("_Color", GridManager.Instance.EmptyColor);
+                    _meshRenderer.SetPropertyBlock(materialPropertyBlock);
+                    break;
+                }
+            case MaterialState.Filled:
+                {
+                    //_meshRenderer.materials[0] = GridManager.Instance.FilledMaterial;
+                    materialPropertyBlock.SetColor("_Color", GridManager.Instance.FilledColor);
+                    _meshRenderer.SetPropertyBlock(materialPropertyBlock);
+                    break;
+                }
+            default:
+                {
+                    //_meshRenderer.materials[0] = GridManager.Instance.BlankMaterial;
+                    materialPropertyBlock.SetColor("_Color", GridManager.Instance.BlankColor);
+                    _meshRenderer.SetPropertyBlock(materialPropertyBlock);
+                    break;
+                }
+        }
     }
 
-    private void OnOnHoverTile(NodeBase obj)
-    {
 
-    }
+    //public static event Action<NodeBase> OnHoverTile;
+    //private void OnEnable()
+    //{
+    //    OnHoverTile += OnOnHoverTile;
+    //}
+    //private void OnDisable()
+    //{
+    //    OnHoverTile -= OnOnHoverTile;
+    //}
 
-    protected virtual void OnMouseDown()
-    {
-        if (!IsWalkable) return;
-        OnHoverTile?.Invoke(this);
-    }
+    //private void OnOnHoverTile(NodeBase obj)
+    //{
+
+    //}
+
+    //protected virtual void OnMouseDown()
+    //{
+    //    if (!IsEmpty) return;
+    //    OnHoverTile?.Invoke(this);
+    //}
 
     #region Pathfinding
     public List<NodeBase> Neighbors { get; protected set; }
@@ -63,7 +94,7 @@ public abstract class NodeBase : MonoBehaviour
 
     public void ReseTTile()
     {
-        if (!IsWalkable) return;
+        if (!IsEmpty) return;
         _renderer.color = Color.white;
     }
 
@@ -74,4 +105,11 @@ public interface ICoord
 {
     public float GetDistance(ICoord other);
     public Vector3 Position { get; set; }
+}
+
+public enum MaterialState
+{
+    Blank,
+    Empty,
+    Filled
 }
