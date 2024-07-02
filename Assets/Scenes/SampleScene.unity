@@ -222,6 +222,79 @@ MonoBehaviour:
   _targetLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!1 &61824375
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 61824378}
+  - component: {fileID: 61824377}
+  - component: {fileID: 61824376}
+  m_Layer: 0
+  m_Name: Group Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &61824376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61824375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c7ea788efaae8e4983ebbf2b73a399e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameEvent: {fileID: 11400000, guid: 62d5bfb8070e2f84bbad7d9c0ab991c1, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 61824377}
+        m_TargetAssemblyTypeName: GroupManager, Assembly-CSharp
+        m_MethodName: OnTilePlaced
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &61824377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61824375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef647c60f3dafff4d86c7fbd05da76a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &61824378
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61824375}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &83993554
 GameObject:
   m_ObjectHideFlags: 0
@@ -1968,6 +2041,7 @@ GameObject:
   - component: {fileID: 800051722}
   - component: {fileID: 800051721}
   - component: {fileID: 800051720}
+  - component: {fileID: 800051723}
   m_Layer: 0
   m_Name: Mesh (1)
   m_TagString: Untagged
@@ -2056,6 +2130,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 800051718}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &800051723
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800051718}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &807688954
 GameObject:
   m_ObjectHideFlags: 0
@@ -2364,7 +2459,6 @@ GameObject:
   m_Component:
   - component: {fileID: 991101644}
   - component: {fileID: 991101645}
-  - component: {fileID: 991101646}
   - component: {fileID: 991101647}
   m_Layer: 0
   m_Name: Tile
@@ -2404,27 +2498,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameObjectEvent: {fileID: 11400000, guid: 69e4dc13cce14ff41864c97fb3610ed1, type: 2}
   _moveSpeed: 2
---- !u!65 &991101646
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 991101643}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &991101647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3936,6 +4009,7 @@ GameObject:
   - component: {fileID: 1695751470}
   - component: {fileID: 1695751469}
   - component: {fileID: 1695751471}
+  - component: {fileID: 1695751472}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
@@ -4024,6 +4098,27 @@ MonoBehaviour:
   _targetLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!65 &1695751472
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695751467}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1733383407
 GameObject:
   m_ObjectHideFlags: 0
@@ -4575,6 +4670,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scriptableGrid: {fileID: 11400000, guid: 747613a9cf7cb7444ab32b815f8430e8, type: 2}
+  <GridPathEvent>k__BackingField: {fileID: 11400000, guid: 62d5bfb8070e2f84bbad7d9c0ab991c1,
+    type: 2}
   <BlankColor>k__BackingField: {r: 0.1764706, g: 0.53333336, b: 0.7058824, a: 0}
   <EmptyColor>k__BackingField: {r: 0.1764706, g: 0.53333336, b: 0.7058824, a: 0.56078434}
   <FilledColor>k__BackingField: {r: 0.7058824, g: 0.19607843, b: 0.1764706, a: 0.56078434}
@@ -4692,3 +4789,4 @@ SceneRoots:
   - {fileID: 1554000336}
   - {fileID: 991101644}
   - {fileID: 698148616}
+  - {fileID: 61824378}

@@ -27,6 +27,7 @@ public class EmptyTileDedector : MonoBehaviour
         _interactedNode.IsEmpty = false;
         _mover.OnTilePlaced -= OnTilePlaced;
         _mover.OnTileCantPlaced -= OnTileCantPlaced;
+        Destroy(this);
     }
 
     private void Update()
@@ -59,4 +60,8 @@ public class EmptyTileDedector : MonoBehaviour
     public Vector3 InteractedTilePosition => _interactedNode != null ? _interactedNode.transform.position : Vector3.zero;
 
 
+    private void OnMouseDown()
+    {
+        _mover.OnMouseDown();
+    }
 }

@@ -4,10 +4,7 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "Square Grid", menuName = "Grid")]
 public class ScriptableSquareGrid : ScriptableGrid
-{
-    [SerializeField, Range(3, 50)] private int _gridWidth = 10;
-    [SerializeField, Range(3, 50)] private int _gridHeight = 10;
-    [SerializeField, Range(0, 21), Tooltip("21 is %100 walkable")] private float _walkable;
+{   
     public override Dictionary<Vector3, NodeBase> GenerateGrid()
     {
         var tiles = new Dictionary<Vector3, NodeBase>();

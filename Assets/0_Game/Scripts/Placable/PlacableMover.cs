@@ -45,6 +45,7 @@ public class PlacableMover : MonoBehaviour
             {
                 transform.position = FindAvgPositionForPlacement();
                 OnTilePlaced.Invoke();
+                GridManager.Instance.GridPathEvent.RaiseEvent(new Void());
                 Destroy(this);
             }
             else
@@ -58,7 +59,7 @@ public class PlacableMover : MonoBehaviour
 
     }
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         if (!_canSelectable) return;
         transform.position = _movementStartPosition;

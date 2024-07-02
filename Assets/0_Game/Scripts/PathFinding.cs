@@ -12,6 +12,8 @@ public static class Pathfinding
         var toSearch = new List<NodeBase>() { startNode };
         var processed = new List<NodeBase>();
 
+        if (startNode.IsEmpty) return null;
+
         while (toSearch.Any())
         {
             var current = toSearch[0];
@@ -26,6 +28,7 @@ public static class Pathfinding
                 var currentPathTile = targetNode;
                 var path = new List<NodeBase>();
                 var count = 100;
+
                 while (currentPathTile != startNode)
                 {
                     path.Add(currentPathTile);
@@ -40,7 +43,7 @@ public static class Pathfinding
                 return path;
             }
 
-            foreach (var neighbor in current.Neighbors.Where(t => t.IsEmpty && !processed.Contains(t)))
+            foreach (var neighbor in current.Neighbors.Where(t => !t.IsEmpty && !processed.Contains(t)))
             {
                 var inSearch = toSearch.Contains(neighbor);
 
