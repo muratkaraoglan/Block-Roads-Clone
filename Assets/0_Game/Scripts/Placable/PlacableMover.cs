@@ -17,11 +17,13 @@ public class PlacableMover : MonoBehaviour
     private Vector3 _initialPosition;
     private Vector3 _movementStartPosition;
     private EmptyTileDedector[] _tileDedectors;
+
     private void Awake()
     {
         _canSelectable = true;
         _initialPosition = transform.position;
-        _movementStartPosition = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width * .5f, Screen.height * .5f)).x, 3, -2);
+        _movementStartPosition =
+            new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(Screen.width * .5f, Screen.height * .5f)).x, 3, -2);
 
         _tileDedectors = transform.GetComponentsInChildren<EmptyTileDedector>();
     }
@@ -41,6 +43,7 @@ public class PlacableMover : MonoBehaviour
                 if (tileDedector.IsTileEmpty) emptyTileCount++;
                 tileDedector.enabled = false;
             }
+
             if (emptyTileCount == _tileDedectors.Length)
             {
                 transform.position = FindAvgPositionForPlacement();
@@ -54,9 +57,7 @@ public class PlacableMover : MonoBehaviour
                 OnTileCantPlaced.Invoke();
                 transform.position = _initialPosition;
             }
-
         }
-
     }
 
     public void OnMouseDown()
@@ -82,7 +83,10 @@ public class PlacableMover : MonoBehaviour
         {
             avgPos += emptyTileDedector.InteractedTilePosition;
         }
+
         avgPos = avgPos / _tileDedectors.Length;
+
+        print("avg pos:" + avgPos);
         return avgPos;
     }
 
@@ -93,6 +97,7 @@ public class PlacableMover : MonoBehaviour
         {
             if (tileDedector.IsTileEmpty) emptyTileCount++;
         }
+
         return emptyTileCount == _tileDedectors.Length;
     }
 }
